@@ -44,7 +44,7 @@ int main(){
 
     stockApple->setGARCHParams(0.08, 0.1, 0.85);
     
-    double mu = stockApple->setMuParam();
+    double mu = stockApple->setHistoricalMuParam();
     cout << "MU:" << mu << "\n";
     stockApple->setExpectedReturn(mu);
 

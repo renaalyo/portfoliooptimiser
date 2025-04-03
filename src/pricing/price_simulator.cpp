@@ -1,4 +1,4 @@
-#include "price_simulator.h"
+#include "pricing/price_simulator.h"
 
 #include <cmath>
 #include <fstream>
@@ -138,4 +138,3 @@ std::vector<double> PriceSimulator::geometricBrownianMotion(
     }
     return prices;
 }
-

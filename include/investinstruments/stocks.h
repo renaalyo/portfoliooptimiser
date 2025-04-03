@@ -16,7 +16,7 @@ public:
     }
 
     void loadHistoricalData(const string& filename);
-    double setMuParam();
+    double setHistoricalMuParam();
     void setGARCHParams(double omega, double alpha, double beta);
     void simulatePrice(int days);
     

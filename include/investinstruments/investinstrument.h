@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../pricing/price_simulator.h"
+#include "pricing/price_simulator.h"
 #include <string>
 
 

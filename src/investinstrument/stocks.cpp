@@ -1,4 +1,4 @@
-#include "stocks.h"
+#include "investinstruments/stocks.h"
 #include <iostream>
 
 void Stock::loadHistoricalData(const string& filename){
@@ -11,7 +11,7 @@ void Stock::setGARCHParams(double omega, double alpha, double beta){
     garchParams_.beta = beta;
 }
 
-double Stock::setMuParam(){
+double Stock::setHistoricalMuParam(){
     // cout << "Historical" << "\n";
     // for (const auto& el : historicalReturns_){
     //     cout << "Historical" << el << "\n";
