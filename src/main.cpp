@@ -54,7 +54,6 @@ int main(){
 
     // Симуляция цены
     cout << "\nRunning price simulation..." << endl;
-    portfolio->simulateMonteCarlo();
 
     // Получение результатов симуляции
     const int simulationDays = 252;  // 1 торговый год

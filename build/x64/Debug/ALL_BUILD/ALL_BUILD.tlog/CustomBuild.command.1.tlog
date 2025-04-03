@@ -1,0 +1,10 @@
+^C:\USERS\AZATHD\DOCUMENTS\PROJECTS\PORTFOLIOOPTIMISER\CMAKELISTS.TXT
+setlocal
+C:\Users\azathd\Documents\programming_stuff\CMake\bin\cmake.exe -SC:/Users/azathd/Documents/Projects/portfoliooptimiser -BC:/Users/azathd/Documents/Projects/portfoliooptimiser/build --check-stamp-file C:/Users/azathd/Documents/Projects/portfoliooptimiser/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
