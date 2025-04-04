@@ -1,0 +1,20 @@
+[
+{
+  "directory": "C:/Users/azathd/Documents/Projects/portfoliooptimiser/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/portfolio_simulator.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\portfolio_simulator.dir\\src\\main.cpp.obj -c C:\\Users\\azathd\\Documents\\Projects\\portfoliooptimiser\\src\\main.cpp",
+  "file": "C:/Users/azathd/Documents/Projects/portfoliooptimiser/src/main.cpp",
+  "output": "CMakeFiles/portfolio_simulator.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/azathd/Documents/Projects/portfoliooptimiser/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/portfolio_simulator.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\portfolio_simulator.dir\\src\\investinstrument\\stocks.cpp.obj -c C:\\Users\\azathd\\Documents\\Projects\\portfoliooptimiser\\src\\investinstrument\\stocks.cpp",
+  "file": "C:/Users/azathd/Documents/Projects/portfoliooptimiser/src/investinstrument/stocks.cpp",
+  "output": "CMakeFiles/portfolio_simulator.dir/src/investinstrument/stocks.cpp.obj"
+},
+{
+  "directory": "C:/Users/azathd/Documents/Projects/portfoliooptimiser/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/portfolio_simulator.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\portfolio_simulator.dir\\src\\pricing\\price_simulator.cpp.obj -c C:\\Users\\azathd\\Documents\\Projects\\portfoliooptimiser\\src\\pricing\\price_simulator.cpp",
+  "file": "C:/Users/azathd/Documents/Projects/portfoliooptimiser/src/pricing/price_simulator.cpp",
+  "output": "CMakeFiles/portfolio_simulator.dir/src/pricing/price_simulator.cpp.obj"
+}
+]
