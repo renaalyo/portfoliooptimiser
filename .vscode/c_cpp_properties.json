@@ -5,8 +5,8 @@
             "includePath": [
                 "${default}",
                 "${workspaceFolder}",
-                "${workspaceFolder}/investinstruments",
-                "${workspaceFolder}/pricing",
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/tests",
                 "${workspaceFolder}/include"
             ],
             "defines": [

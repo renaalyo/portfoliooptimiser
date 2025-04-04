@@ -37,6 +37,7 @@ std::vector<double> PriceSimulator::loadLogReturns(const std::string& filename){
     std::ifstream file(filename);
 
     if (!file) {
+        std::cerr << "Error: Unable to open file " << filename << std::endl;
         return logReturns;  // Пустой вектор если файл не открылся
     }
 
