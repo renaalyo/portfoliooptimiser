@@ -59,25 +59,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\azathd\Documents\Projects\portfoliooptimiser\build\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\azathd\Documents\Projects\portfoliooptimiser\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">portfolio_simulator.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">portfolio_simulator</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\azathd\Documents\Projects\portfoliooptimiser\build\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\azathd\Documents\Projects\portfoliooptimiser\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">portfolio_simulator.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">portfolio_simulator</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\azathd\Documents\Projects\portfoliooptimiser\build\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\azathd\Documents\Projects\portfoliooptimiser\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">portfolio_simulator.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">portfolio_simulator</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\azathd\Documents\Projects\portfoliooptimiser\build\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\azathd\Documents\Projects\portfoliooptimiser\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">portfolio_simulator.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">portfolio_simulator</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
@@ -124,7 +124,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>C:/Users/azathd/Documents/Projects/portfoliooptimiser/build/Debug/portfolio_simulator.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/azathd/Documents/Projects/portfoliooptimiser/build/Debug/portfolio_simulator.pdb</ProgramDataBaseFile>
+      <ProgramDataBaseFile>C:/Users/azathd/Documents/Projects/portfoliooptimiser/Debug/portfolio_simulator.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -172,7 +172,7 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>C:/Users/azathd/Documents/Projects/portfoliooptimiser/build/Release/portfolio_simulator.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/azathd/Documents/Projects/portfoliooptimiser/build/Release/portfolio_simulator.pdb</ProgramDataBaseFile>
+      <ProgramDataBaseFile>C:/Users/azathd/Documents/Projects/portfoliooptimiser/Release/portfolio_simulator.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -220,7 +220,7 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>C:/Users/azathd/Documents/Projects/portfoliooptimiser/build/MinSizeRel/portfolio_simulator.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/azathd/Documents/Projects/portfoliooptimiser/build/MinSizeRel/portfolio_simulator.pdb</ProgramDataBaseFile>
+      <ProgramDataBaseFile>C:/Users/azathd/Documents/Projects/portfoliooptimiser/MinSizeRel/portfolio_simulator.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -267,7 +267,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>C:/Users/azathd/Documents/Projects/portfoliooptimiser/build/RelWithDebInfo/portfolio_simulator.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/azathd/Documents/Projects/portfoliooptimiser/build/RelWithDebInfo/portfolio_simulator.pdb</ProgramDataBaseFile>
+      <ProgramDataBaseFile>C:/Users/azathd/Documents/Projects/portfoliooptimiser/RelWithDebInfo/portfolio_simulator.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>

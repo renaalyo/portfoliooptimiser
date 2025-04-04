@@ -121,7 +121,8 @@ std::vector<double> PriceSimulator::geometricBrownianMotion(
         double volatility,
         double numDays
 ){
-    std::vector<double> prices(numDays);
+    std::vector<double> prices(numDays); 
+    //warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64'
     if (numDays == 0) return prices;
 
     const double dt = 1.0 / 252.0;

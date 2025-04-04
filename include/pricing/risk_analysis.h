@@ -6,6 +6,16 @@
 #include <numeric>
 
 namespace RiskAnalysis{
+    // void logVector(const std::string& name, const std::vector<double>& vec) {
+    //     std::cout << name << " (size: " << vec.size() << "): [";
+    //     for (size_t i = 0; i < vec.size(); ++i) {
+    //         std::cout << vec[i];
+    //         if (i != vec.size() - 1) std::cout << ", ";
+    //     }
+    //     if (vec.size()) std::cout << ", ...";
+    //     std::cout << "]\n";
+    // }
+
     double calculatePercentile(const std::vector<double>& prices, double percentile){
         if (prices.empty()) return 0.0;
 
@@ -21,8 +31,12 @@ namespace RiskAnalysis{
         std::vector<double> returns;
         returns.reserve(prices.size() - 1);
         for (size_t i = 1; i < prices.size(); i++){
-            returns[i] = (prices[i] - prices[i - 1] )/ prices[i - 1];
+            //CAREFULLY
+            returns.push_back((prices[i] - prices[i - 1] )/ prices[i - 1]);
         }
+
+        //logVector("Returns", returns);
+
         return -calculatePercentile(returns, 1 - confidence_level);
     }
 
@@ -38,6 +52,8 @@ namespace RiskAnalysis{
                 tailReturns.push_back(ret);
             }
         }
+
+        //logVector("tailReturns", tailReturns);
     
         return (tailReturns.empty()) ?
             0.0
