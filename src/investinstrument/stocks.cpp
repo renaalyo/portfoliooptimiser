@@ -66,3 +66,24 @@ std::vector<double> Stock::getPriceSimulation(int days) {
         days
     );
 }
+
+std::vector<std::vector<double>> Stock::getMCSimulations(int days, int simulationsCount){
+    auto variances = this->simulator_.calculateHistoricalVolatility(
+        historicalReturns_, 
+        garchParams_);
+
+    std::vector<double> volatilities(variances.size());
+    for (size_t i = 0; i < variances.size(); ++i) {
+        volatilities[i] = std::sqrt(variances[i]);
+    }
+    
+    double meanVol = simulator_.calculateMeanVolatility(volatilities);
+
+    return this->simulator_.monteCarloGBM(
+        this->getPrice(),
+        this->getExpectedReturn(),
+        meanVol,
+        days,
+        simulationsCount
+    );
+}
