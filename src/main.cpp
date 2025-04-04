@@ -9,6 +9,7 @@
 #include "investinstruments/stocks.h"
 #include "investinstruments/stockBuilder.h"
 #include "pricing/price_simulator.h"
+#include "pricing/risk_analysis.h"  
 #include "portfolio.h"
 
 using namespace std;
@@ -37,7 +38,7 @@ int main(){
     auto stockApple = StockBuilder()
         .setName("Tesla")
         .setTicker("TSLA")
-        .setPrice(191)
+        .setPrice(248)
         .Build();
     
     stockApple->loadHistoricalData("TSLA_returns.csv");
@@ -64,5 +65,6 @@ int main(){
     cout << "Simulated price after " << simulationDays << " days: $" 
          << simulatedPrices.back() << endl;
     //writePricesToCSF(simulatedPrices, "stocks.csv");
+    RiskAnalysis::analyzeRisk(simulatedPrices);
     return 0;
 }

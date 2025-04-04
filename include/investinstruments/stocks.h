@@ -21,4 +21,5 @@ public:
     void simulatePrice(int days);
     
     std::vector<double> getPriceSimulation(int days) override;
+    std::vector<std::vector<double>> getMCSimulations(int days, int simulationsCount) override;
 };

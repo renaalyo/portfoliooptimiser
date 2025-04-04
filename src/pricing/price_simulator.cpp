@@ -120,9 +120,9 @@ std::vector<double> PriceSimulator::geometricBrownianMotion(
         double currentPrice,
         double mu,
         double volatility,
-        double numDays
+        int numDays
 ){
-    std::vector<double> prices(numDays);
+    std::vector<double> prices(numDays); 
     if (numDays == 0) return prices;
 
     const double dt = 1.0 / 252.0;
@@ -138,4 +138,25 @@ std::vector<double> PriceSimulator::geometricBrownianMotion(
         );
     }
     return prices;
+}
+
+std::vector<std::vector<double>> PriceSimulator::monteCarloGBM(
+    double currentPrice,
+    double mu,
+    double volatility,
+    int numDays,
+    int simulationsCount
+){
+    std::vector<std::vector<double>> allSimulations(simulationsCount);
+
+    for (int i = 0; i < simulationsCount; i++)
+    {
+        allSimulations[i] = geometricBrownianMotion(
+            currentPrice,
+            mu,
+            volatility,
+            numDays
+        );
+    }
+    return allSimulations;
 }

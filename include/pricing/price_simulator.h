@@ -31,7 +31,15 @@ public:
         double currentPrice,
         double mu,
         double volatility,
-        double numDays
+        int numDays
+    );
+
+    std::vector<std::vector<double>> PriceSimulator::monteCarloGBM(
+        double currentPrice,
+        double mu,
+        double volatility,
+        int numDays,
+        int simulationsCount
     );
 };
 
