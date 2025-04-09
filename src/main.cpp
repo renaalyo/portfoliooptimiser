@@ -73,17 +73,52 @@ void writePricesToCSV(const std::vector<std::vector<double>>& simulations, const
               << filename << std::endl;
 }
 
+double mean = 0.0;
+double sq_sum = 0.0;
+double stdev = 0.0;
+double median = 0.0;
+double q5 = 0.0;
+double q95 = 0.0;
+
+void showMetrics(const std::vector<std::vector<double>>& simulations){
+    std::vector<double> last_day_prices;
+    for(const auto& sim : simulations){
+        last_day_prices.push_back(sim.back());
+    }
+    //Mean
+    double mean = accumulate(last_day_prices.begin(), last_day_prices.end(), 0.0) / last_day_prices.size();
+
+    // Standard Deviation
+    double sq_sum = inner_product(last_day_prices.begin(), last_day_prices.end(), last_day_prices.begin(), 0.0);
+    double stdev = sqrt(sq_sum / last_day_prices.size() - mean * mean);
+
+    // Median
+    sort(last_day_prices.begin(), last_day_prices.end());
+    double median = last_day_prices[last_day_prices.size() / 2];
+
+    // Quantiles (5% и 95%)
+    double q5 = last_day_prices[last_day_prices.size() * 0.05];
+    double q95 = last_day_prices[last_day_prices.size() * 0.95];
+
+    std::cout << "mean: " << mean << "\n";
+    std::cout << "median: " << median << "\n";
+    std::cout << "stdev: " << stdev << "\n";
+    std::cout << "q5: " << q5 << "\n";
+    std::cout << "q95: " << q95 << "\n";
+}
+
 int main(){
     auto portfolio = make_unique<Portfolio>(1000.0);
     auto stockApple = StockBuilder()
-        .setName("Tesla")
-        .setTicker("TSLA")
-        .setPrice(248)
+        .setName("Apple")
+        .setTicker("AAPL")
+        .setPrice(191)
         .Build();
     
-    stockApple->loadHistoricalData("TSLA_returns.csv");
+    //stockApple->loadHistoricalData("TSLA_returns.csv");
+    stockApple->loadHistoricalData("AAPL_returns.csv");
 
-    stockApple->setGARCHParams(0.08, 0.1, 0.85);
+    stockApple->setGARCHParams(0.01, 0.05, 0.85);
     
     double mu = stockApple->setHistoricalMuParam();
     cout << "MU:" << mu << "\n";
@@ -98,16 +133,12 @@ int main(){
 
     // Получение результатов симуляции
     const int simulationDays = 252;  // 1 торговый год
-    //auto simulatedPrice = portfolio->getInstruments()[0]->getPriceSimulation(simulationDays);
     
-    // Вывод результатов
-    // cout << "\nSimulation results:" << endl;
-    // cout << "Simulated price after " << simulationDays << " days: $" 
-    //      << simulatedPrice.back() << endl;
     //writePriceToCSF(simulatedPrice, "stocks.csv");
     //RiskAnalysis::analyzeRisk(simulatedPrice);
-    int simulationCount = 100;
-    auto simulatedMCPrices = portfolio->getInstruments()[0]->getNEWMCSimulations(simulationDays, simulationCount);
+    int simulationCount = 1000;
+    auto simulatedMCPrices = portfolio->getInstruments()[0]->getMCSimulations(simulationDays, simulationCount);
     writePricesToCSV(simulatedMCPrices, "stocks.csv");
+    showMetrics(simulatedMCPrices);
     return 0;
 }

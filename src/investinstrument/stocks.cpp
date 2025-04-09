@@ -24,7 +24,7 @@ void Stock::simulatePrice(int days){
         std::cout << "Historical data not loaded";
     }
 
-    auto variances = this->simulator_.calculateHistoricalVolatility(
+    auto variances = this->simulator_.calculateHistoricalVariances(
         historicalReturns_, 
         garchParams_
     );
@@ -48,7 +48,7 @@ void Stock::simulatePrice(int days){
 }
 
 std::vector<double> Stock::getPriceSimulation(int days) {
-    auto variances = this->simulator_.calculateHistoricalVolatility(
+    auto variances = this->simulator_.calculateHistoricalVariances(
         historicalReturns_, 
         garchParams_);
 
@@ -68,7 +68,7 @@ std::vector<double> Stock::getPriceSimulation(int days) {
 }
 
 std::vector<std::vector<double>> Stock::getMCSimulations(int days, int simulationsCount){
-    auto variances = this->simulator_.calculateHistoricalVolatility(
+    auto variances = this->simulator_.calculateHistoricalVariances(
         historicalReturns_, 
         garchParams_);
 
@@ -78,7 +78,7 @@ std::vector<std::vector<double>> Stock::getMCSimulations(int days, int simulatio
     }
     
     double meanVol = simulator_.calculateMeanVolatility(volatilities);
-
+    std::cout << "Current Volatility: " << meanVol << "\n";
     return this->simulator_.monteCarloGBM(
         this->getPrice(),
         this->getExpectedReturn(),
@@ -90,7 +90,7 @@ std::vector<std::vector<double>> Stock::getMCSimulations(int days, int simulatio
 
 std::vector<std::vector<double>> Stock::getNEWMCSimulations(int days, int simulationsCount){
     double vol = simulator_.calculateCurrentVolatility(historicalReturns_, garchParams_);
-
+    std::cout << "Current Volatility: " << vol << "\n";
     return this->simulator_.monteCarloGBM(
         this->getPrice(),
         this->getExpectedReturn(),

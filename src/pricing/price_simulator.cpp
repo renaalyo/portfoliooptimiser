@@ -7,21 +7,21 @@
 #include <numeric>
 #include <random>
 
-double PriceSimulator::calculateMeanVolatility(const std::vector<double>& volatilities){
-    if (volatilities.empty()) return 0.0;
-    double mv = std::accumulate(volatilities.begin(), volatilities.end(), 0.0);
-    return mv / volatilities.size(); 
+double PriceSimulator::calculateMeanVolatility(const std::vector<double>& variances){
+    if (variances.empty()) return 0.0;
+    double mv = std::accumulate(variances.begin(), variances.end(), 0.0);
+    return mv / variances.size(); 
 }
 
-std::vector<double> PriceSimulator::calculateHistoricalVolatility(
+std::vector<double> PriceSimulator::calculateHistoricalVariances(
     const std::vector<double>& returns,
     const GARCHparams& params   
 ){
     std::vector<double> variances(returns.size(), 0.0);
     if (returns.empty()) return variances;
 
-    variances[0] = returns[0] * returns[0];
-    //variances[0] = params.omega / (1 - params.alpha - params.beta);
+    //variances[0] = returns[0] * returns[0];
+    variances[0] = params.omega / (1 - params.alpha - params.beta);
 
     for(size_t i = 1; i < returns.size(); i++){
         variances[i] = params.omega +
@@ -39,7 +39,7 @@ double PriceSimulator::calculateCurrentVolatility(
     if (returns.empty()) return 0.0;
 
     double variance = params.omega / (1 - params.alpha - params.beta);
-    //variance[0] = params.omega / (1 - params.alpha - params.beta);
+    
 
     for(size_t i = 1; i < returns.size(); i++){
         variance = params.omega +

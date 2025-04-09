@@ -13,8 +13,8 @@ public:
 
     std::vector<double> loadLogReturns(const std::string& filename);
 
-    double calculateMeanVolatility(const std::vector<double>& volatilities);
-    std::vector<double> calculateHistoricalVolatility(
+    double calculateMeanVolatility(const std::vector<double>& variances);
+    std::vector<double> calculateHistoricalVariances(
         const std::vector<double>& returns,
         const GARCHparams& params
     );
