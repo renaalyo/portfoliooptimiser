@@ -50,4 +50,5 @@ public:
     virtual void simulatePrice(){};
     virtual std::vector<double> getPriceSimulation(int days) = 0;
     virtual std::vector<std::vector<double>> getMCSimulations(int days, int simulationsCount) = 0;
+    virtual std::vector<std::vector<double>> getNEWMCSimulations(int days, int simulationsCount) = 0;
 };

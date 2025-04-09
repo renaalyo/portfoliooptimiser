@@ -18,6 +18,11 @@ public:
         const std::vector<double>& returns,
         const GARCHparams& params
     );
+    double calculateCurrentVolatility(
+        const std::vector<double>& returns,
+        const GARCHparams& params
+    );
+
 
     double calculateMU(const std::vector<double>& prices);
     double singleGeometricBrownianMotion(

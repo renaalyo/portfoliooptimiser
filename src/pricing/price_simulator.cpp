@@ -32,6 +32,24 @@ std::vector<double> PriceSimulator::calculateHistoricalVolatility(
     return variances;
 }
 
+double PriceSimulator::calculateCurrentVolatility(
+    const std::vector<double>& returns,
+    const GARCHparams& params
+){
+    if (returns.empty()) return 0.0;
+
+    double variance = params.omega / (1 - params.alpha - params.beta);
+    //variance[0] = params.omega / (1 - params.alpha - params.beta);
+
+    for(size_t i = 1; i < returns.size(); i++){
+        variance = params.omega +
+                       params.alpha * returns[i - 1] * returns[i - 1] +
+                       params.beta * variance;
+        //CAREFULLY               
+    }
+    return std::sqrt(variance);
+}
+
 std::vector<double> PriceSimulator::loadLogReturns(const std::string& filename){
     std::vector<double> logReturns;
     std::ifstream file(filename);

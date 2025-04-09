@@ -27,8 +27,12 @@ def load_and_plot_simulations(csv_file):
         print(f"Ошибка при чтении файла: {e}")
         return
 
-    colors = plt.cm.gist_ncar(np.linspace(0, 1, 1000))
-    
+    #colors = plt.cm.gist_ncar(np.linspace(0, 1, 1000))
+    num_simulations = len(df.columns)
+    colors = plt.cm.gist_ncar(np.linspace(0, 1, num_simulations))
+
+
+
     # Построение графика
     plt.figure(figsize=(15, 8), dpi=100)
     

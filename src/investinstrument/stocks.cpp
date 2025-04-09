@@ -87,3 +87,15 @@ std::vector<std::vector<double>> Stock::getMCSimulations(int days, int simulatio
         simulationsCount
     );
 }
+
+std::vector<std::vector<double>> Stock::getNEWMCSimulations(int days, int simulationsCount){
+    double vol = simulator_.calculateCurrentVolatility(historicalReturns_, garchParams_);
+
+    return this->simulator_.monteCarloGBM(
+        this->getPrice(),
+        this->getExpectedReturn(),
+        vol,
+        days,
+        simulationsCount
+    );
+}

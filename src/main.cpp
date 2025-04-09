@@ -107,7 +107,7 @@ int main(){
     //writePriceToCSF(simulatedPrice, "stocks.csv");
     //RiskAnalysis::analyzeRisk(simulatedPrice);
     int simulationCount = 100;
-    auto simulatedMCPrices = portfolio->getInstruments()[0]->getMCSimulations(simulationDays, simulationCount);
+    auto simulatedMCPrices = portfolio->getInstruments()[0]->getNEWMCSimulations(simulationDays, simulationCount);
     writePricesToCSV(simulatedMCPrices, "stocks.csv");
     return 0;
 }
