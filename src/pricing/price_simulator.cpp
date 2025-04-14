@@ -50,48 +50,6 @@ double PriceSimulator::calculateCurrentVolatility(
     return std::sqrt(variance);
 }
 
-std::vector<double> PriceSimulator::loadLogReturns(const std::string& filename){
-    std::vector<double> logReturns;
-    std::ifstream file(filename);
-
-    if (!file) {
-        std::cerr << "Error: Unable to open file " << filename << std::endl;
-        return logReturns;  // Пустой вектор если файл не открылся
-    }
-
-    std::string line;
-    bool dataSection = false;
-
-    while(std::getline(file,line)){
-        if (!dataSection) {
-            if (line.find("Date") != std::string::npos) {
-                dataSection = true;
-            }
-            continue;
-        }
-
-        // Разбиваем строку на части
-        size_t last_comma = line.find_last_of(',');
-        if (last_comma == std::string::npos || last_comma == line.size() - 1) {
-            continue;  // Пропускаем строки без данных
-        }
-
-        // Пробуем преобразовать в число
-        std::string value_str = line.substr(last_comma + 1);
-        double value;
-        if (std::istringstream(value_str) >> value) {
-            logReturns.push_back(value);
-        }
-    }
-
-    // std::cout << "logReturns" << "\n";
-    // for (const auto& el : logReturns){
-    //     std::cout << "logReturns" << el << "\n";
-    // }
-    return logReturns;
-};
-
-
 double PriceSimulator::calculateMU(const std::vector<double>& logReturns){
     if (logReturns.size() < 2) return 0.09;
 
