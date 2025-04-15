@@ -9,6 +9,8 @@ namespace RiskAnalyzer{
     double calculatePercentile(const std::vector<double>& prices, double percentile){
         if (prices.empty()) return 0.0;
 
+        percentile/=100;
+
         std::vector<double> sorted(prices);
         std::sort(sorted.begin(), sorted.end());
         size_t index = static_cast<size_t>(percentile * (sorted.size() - 1));
@@ -93,7 +95,7 @@ namespace RiskAnalyzer{
         std::cout << "stdev: " << stdev << "\n";
         std::cout << "Percentile5: " << q5 << "\n";
         std::cout << "Percentile95: " << q95 << "\n";
-        //std::cout << "VaR (95%): " << calculateVaR(last_day_prices) * 100 << "%\n";
-        //std::cout << "CVaR (95%): " << calculateCVaR(last_day_prices) * 100 << "%\n";
+        std::cout << "VaR (95%): " << calculateVaR(last_day_prices) * 100 << "%\n";
+        std::cout << "CVaR (95%): " << calculateCVaR(last_day_prices) * 100 << "%\n";
     }
 }

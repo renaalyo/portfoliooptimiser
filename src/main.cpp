@@ -44,6 +44,6 @@ int main(){
     int simulationCount = 1000;
     auto simulatedMCPrices = portfolio->getInstruments()[0]->getMCSimulations(simulationDays, simulationCount);
     stockApple->writePriceToCSV(simulatedMCPrices, "stocks.csv");
-    //RiskAnalyzer::showMetrics(simulatedMCPrices);
+    RiskAnalyzer::showMetrics(simulatedMCPrices);
     return 0;
 }
